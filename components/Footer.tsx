@@ -1,11 +1,16 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import FadeUp from "@/components/FadeUp";
 export default function Footer() {
   return (
     <footer className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24">
-      <div className="text-center mb-20">
-        <h2 className="text-5xl md:text-[5.5rem] font-medium tracking-tight text-neutral-950">Ready to Optimize Your Portfolio?</h2>
-      </div>
+      <FadeUp>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-[5.5rem] font-medium tracking-tight text-neutral-950">Ready to Optimize Your Portfolio?</h2>
+        </div>
+      </FadeUp>
 
       <div className="bg-[#111111] rounded-[2rem] p-10 md:p-16 text-white flex flex-col">
         {/* Top Newsletter Section */}

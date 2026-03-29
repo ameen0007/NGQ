@@ -67,7 +67,7 @@ export default function AdminDashboardPage() {
         return;
       }
 
-      setProfile(profileData);
+      setProfile({ ...profileData, email: session.user.email });
       await loadUsers();
       setIsLoading(false);
     }
@@ -242,7 +242,7 @@ export default function AdminDashboardPage() {
           <div className="flex flex-col items-start pr-2">
             <span className="text-[13px] font-bold leading-tight">{profile?.name || "Admin"}</span>
             {profile?.email === 'ameencrews@gmail.com' ? (
-              <span className="text-[10px] font-bold tracking-[0.1em] uppercase bg-gradient-to-r from-rose-500 via-fuchsia-500 to-violet-500 bg-clip-text text-transparent">System Developer</span>
+              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-amber-500">System Developer</span>
             ) : (
               <span className="text-[10px] font-bold tracking-[0.1em] text-[#A28822] uppercase">Admin</span>
             )}
@@ -301,18 +301,16 @@ export default function AdminDashboardPage() {
                  <tr key={user.id} className="border-b border-neutral-500/5 hover:bg-neutral-500/5 transition-colors group">
                    <td className="py-5 pl-4 font-bold text-[15px]">{user.name}</td>
                    <td className="py-5">
-                     {user.email === 'ameencrews@gmail.com' ? (
-                       <span className="bg-gradient-to-r from-rose-500/10 via-fuchsia-500/10 to-violet-500/10 border border-fuchsia-500/20 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 w-max">
-                         <span className="bg-gradient-to-r from-rose-500 via-fuchsia-500 to-violet-500 bg-clip-text text-transparent flex items-center gap-1">
-                           <ShieldCheck className="w-3 h-3 text-fuchsia-500"/> System Developer
-                         </span>
+                     {user.id === profile?.id && profile?.email === 'ameencrews@gmail.com' ? (
+                       <span className="bg-amber-500/10 text-amber-600 border border-amber-500/30 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 w-max">
+                         <ShieldCheck className="w-3 h-3"/> System Developer
                        </span>
                      ) : user.role === 'admin' ? (
                        <span className="bg-purple-500/10 text-purple-600 border border-purple-500/20 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 w-max">
                          <ShieldCheck className="w-3 h-3"/> Internal Admin
                        </span>
                      ) : (
-                       <span className="bg-blue-500/10 text-blue-500 border border-blue-500/20 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider w-max block">
+                       <span className="bg-teal-500/10 text-teal-600 border border-teal-500/20 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider w-max block">
                          Client Portfolio
                        </span>
                      )}

@@ -301,7 +301,7 @@ export default function AdminDashboardPage() {
                  <tr key={user.id} className="border-b border-neutral-500/5 hover:bg-neutral-500/5 transition-colors group">
                    <td className="py-5 pl-4 font-bold text-[15px]">{user.name}</td>
                    <td className="py-5">
-                     {user.id === profile?.id && profile?.email === 'ameencrews@gmail.com' ? (
+                     {user.email === 'ameencrews@gmail.com' ? (
                        <span className="bg-amber-500/10 text-amber-600 border border-amber-500/30 px-3 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 w-max">
                          <ShieldCheck className="w-3 h-3"/> System Developer
                        </span>

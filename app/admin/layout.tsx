@@ -3,16 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   LayoutDashboard, 
   Settings, 
   Moon,
   Sun,
   LifeBuoy, 
-  LogOut 
+  LogOut,
+  Loader2
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
 
 export default function AdminLayout({
   children,
@@ -20,9 +22,56 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isDark, setIsDark] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
 
-  // We only need Dashboard now. 
+  // Skip auth check for the admin login page itself
+  const isLoginPage = pathname === "/admin/login";
+
+  useEffect(() => {
+    if (isLoginPage) {
+      setAuthChecked(true);
+      return;
+    }
+
+    async function checkAuth() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        router.replace("/login");
+        return;
+      }
+
+      const { data: profileData } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", session.user.id)
+        .single();
+
+      if (profileData?.role !== "admin") {
+        router.replace("/portfolio");
+        return;
+      }
+
+      setAuthChecked(true);
+    }
+    checkAuth();
+  }, [isLoginPage, router]);
+
+  // Show loading while auth is being verified (but not on login page)
+  if (!authChecked && !isLoginPage) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9FAFB]">
+        <Loader2 className="w-8 h-8 text-[#FFDD33] animate-spin" />
+      </div>
+    );
+  }
+
+  // For admin login page, just render children without the sidebar
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
+
   const navItems = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
   ];

@@ -61,19 +61,34 @@ export async function createClientAccount(formData: FormData) {
 }
 
 //
-// 2. GET ALL PROFILES (Admins and Clients)
+// 2. GET ALL PROFILES (Admins and Clients) — with emails from Auth
 //
 export async function getAllProfiles() {
   try {
-    // We fetch all records, admins included, ordered so admins are listed first
     const { data, error } = await supabaseAdmin
       .from("profiles")
       .select("*")
-      .order("role", { ascending: true }) // 'admin' comes before 'client' alphabetically
+      .order("role", { ascending: true })
       .order("created_at", { ascending: false })
 
     if (error) throw new Error(error.message)
-    return { data, error: null }
+
+    // Fetch auth users to get emails
+    const { data: authUsersData } = await supabaseAdmin.auth.admin.listUsers({ perPage: 1000 })
+    const emailMap = new Map<string, string>()
+    if (authUsersData?.users) {
+      for (const u of authUsersData.users) {
+        if (u.email) emailMap.set(u.id, u.email)
+      }
+    }
+
+    // Merge emails into profiles
+    const enriched = (data || []).map(profile => ({
+      ...profile,
+      email: emailMap.get(profile.id) || null
+    }))
+
+    return { data: enriched, error: null }
   } catch (error: any) {
     return { data: null, error: error.message }
   }

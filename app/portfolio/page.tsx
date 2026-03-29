@@ -28,8 +28,8 @@ export default function PortfolioPage() {
       try {
         const { data: { session } } = await supabase.auth.getSession();
         if (!session) {
-          router.push("/login");
-          return;
+          router.replace("/login");
+          return; // Don't set isLoading=false — keep spinner while redirecting
         }
 
         const { data: profileData, error: profileError } = await supabase
@@ -39,7 +39,8 @@ export default function PortfolioPage() {
           .single();
 
         if (profileError || profileData?.role !== "client") {
-          throw new Error("Unauthorized");
+          router.replace("/login");
+          return; // Keep spinner during redirect
         }
 
         setProfile(profileData);
@@ -54,11 +55,11 @@ export default function PortfolioPage() {
         if (perfData) {
           setPerformances(perfData);
         }
+
+        setIsLoading(false); // Only dismiss loading after successful auth
       } catch (error) {
         console.error(error);
-        router.push("/login");
-      } finally {
-        setIsLoading(false);
+        router.replace("/login");
       }
     }
     getUserData();

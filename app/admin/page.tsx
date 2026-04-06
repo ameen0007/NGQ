@@ -24,6 +24,7 @@ import {
   X,
   AlertCircle
 } from "lucide-react";
+import SkeletonLoader from "@/components/SkeletonLoader";
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -203,11 +204,7 @@ export default function AdminDashboardPage() {
   const totalInvested = clientsOnly.reduce((sum, u) => sum + (Number(u.invested_fund) || 0), 0);
 
   if (isLoading) {
-    return (
-      <div className="flex-1 flex items-center justify-center p-20">
-        <Loader2 className="w-8 h-8 opacity-50 animate-spin" />
-      </div>
-    );
+    return <SkeletonLoader />;
   }
 
   const InlineModalMessage = () => {

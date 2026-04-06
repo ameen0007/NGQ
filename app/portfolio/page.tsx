@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Navbar from "@/components/Navbar";
 import TradingViewTicker from "@/components/TradingViewTicker";
-import { Loader2, ArrowUpRight, ArrowDownRight, History } from "lucide-react";
+import Footer from "@/components/Footer";
+import SkeletonLoader from "@/components/SkeletonLoader";
+import { ArrowUpRight, ArrowDownRight, History } from "lucide-react";
 import {
   AreaChart,
   Area,
@@ -66,11 +68,7 @@ export default function PortfolioPage() {
   }, [router]);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <Loader2 className="w-8 h-8 text-[#FFDD33] animate-spin" />
-      </div>
-    );
+    return <SkeletonLoader />;
   }
 
   // --- Core Financial Formatting & Math ---
@@ -338,6 +336,7 @@ export default function PortfolioPage() {
 
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

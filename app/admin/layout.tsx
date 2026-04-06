@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import SkeletonLoader from "@/components/SkeletonLoader";
 
 export default function AdminLayout({
   children,
@@ -60,11 +61,7 @@ export default function AdminLayout({
 
   // Show loading while auth is being verified (but not on login page)
   if (!authChecked && !isLoginPage) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F9FAFB]">
-        <Loader2 className="w-8 h-8 text-[#FFDD33] animate-spin" />
-      </div>
-    );
+    return <SkeletonLoader />;
   }
 
   // For admin login page, just render children without the sidebar

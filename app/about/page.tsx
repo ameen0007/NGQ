@@ -111,6 +111,80 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Founders Section */}
+        <section className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 py-16 lg:py-24">
+          <div className="text-center mb-16">
+             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#171717] mb-6">Founders</h2>
+             <p className="text-neutral-500 text-[16px] md:text-[18px] max-w-2xl mx-auto">
+               Guided by visionary experts committed to disciplined risk management and long-term financial growth.
+             </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+             {/* Founder 1 */}
+             <div className="flex flex-col items-center group text-center">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
+                   <Image src="/men1.jpg" alt="Abdul Rahim Nissar" width={224} height={224} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#171717]">Abdul Rahim Nissar</h3>
+                <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Founder</p>
+             </div>
+             {/* Founder 2 */}
+             <div className="flex flex-col items-center group text-center">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
+                   <Image src="/men2.jpg" alt="Mehroof rahman" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#171717]">Mehroof rahman</h3>
+                <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Co-founder</p>
+             </div>
+             {/* Founder 3 */}
+             <div className="flex flex-col items-center group text-center">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
+                   <Image src="/men3.jpg" alt="Abee sinan" width={224} height={224} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#171717]">Abee sinan</h3>
+                <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Co-founder</p>
+             </div>
+          </div>
+        </section>
+
+        {/* Our Approach Section */}
+        <section className="bg-[#F9FAFB] w-full py-16 lg:py-24">
+           <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20">
+             <div className="text-center mb-16">
+               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#171717] mb-6">Our Approach</h2>
+               <p className="text-neutral-500 text-[16px] md:text-[18px] max-w-2xl mx-auto">
+                 Tailored investment strategies designed to balance stability with dynamic market growth.
+               </p>
+             </div>
+             
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+               
+               {/* Low Risk Card */}
+               <div className="bg-white border border-neutral-100 rounded-[2rem] p-10 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFDD33]/10 rounded-bl-[80px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
+                 <h3 className="text-3xl font-bold text-[#171717] mb-4 relative z-10">Low Risk</h3>
+                 <div className="w-full h-px bg-neutral-100 my-4 relative z-10" />
+                 <p className="text-xl font-medium text-emerald-600 mb-4 relative z-10">3% Fixed Return Per Month</p>
+                 <p className="text-[15px] text-neutral-500 leading-relaxed max-w-[280px] relative z-10">
+                   Highly secure allocation ensuring steady capital, absolute preservation, and absolutely no other risk exposure.
+                 </p>
+               </div>
+
+               {/* Medium Risk Card */}
+               <div className="bg-[#171717] rounded-[2rem] p-10 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[80px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
+                 <h3 className="text-3xl font-bold text-white mb-4 relative z-10">Medium Risk</h3>
+                 <div className="w-full h-px bg-white/10 my-4 relative z-10" />
+                 <p className="text-xl font-medium text-[#FFDD33] mb-4 relative z-10">10% - 13% Managed Return</p>
+                 <p className="text-[15px] text-neutral-400 leading-relaxed max-w-[280px] relative z-10">
+                   A balanced trajectory targeting higher yields while maintaining a maximum calculated 20% capital risk threshold.
+                 </p>
+               </div>
+
+             </div>
+           </div>
+        </section>
+
         <Footer />
       </main>
     </div>

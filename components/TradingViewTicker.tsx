@@ -1,7 +1,12 @@
 "use client";
 
 import React from 'react';
-import { SymbolOverview } from "react-ts-tradingview-widgets";
+import dynamic from 'next/dynamic';
+
+const SymbolOverview = dynamic(
+  () => import("react-ts-tradingview-widgets").then((mod) => mod.SymbolOverview),
+  { ssr: false }
+);
 
 export default function TradingViewTicker() {
   return (

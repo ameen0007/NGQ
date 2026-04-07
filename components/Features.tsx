@@ -55,6 +55,43 @@ export default function Features() {
           </FadeUp>
         </div>
 
+        {/* Our Approach Section */}
+        <div className="flex flex-col items-center justify-center my-6 py-6 border-y border-neutral-100">
+             <div className="text-center mb-10">
+               <h2 className="text-[2.2rem] md:text-4xl font-medium tracking-tight text-neutral-950 mb-3">Our Approach</h2>
+               <p className="text-neutral-500 text-[15px] max-w-xl mx-auto">
+                 Tailored investment strategies designed to balance stability with dynamic market growth.
+               </p>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
+               {/* Low Risk Card */}
+               <FadeUp delay={100}>
+               <div className="bg-white border border-neutral-100 rounded-[2rem] p-8 md:p-10 flex flex-col items-center text-center shadow-sm hover:shadow-lg transition-all duration-500 group relative overflow-hidden h-full">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFDD33]/10 rounded-bl-[80px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
+                 <h3 className="text-2xl font-bold text-[#171717] mb-3 relative z-10">Low Risk</h3>
+                 <div className="w-full h-px bg-neutral-100 my-4 relative z-10" />
+                 <p className="text-lg font-bold text-emerald-600 mb-3 relative z-10">3% Fixed Return Per Month</p>
+                 <p className="text-[14px] text-neutral-500 leading-relaxed max-w-[280px] relative z-10">
+                   Highly secure allocation ensuring steady capital, absolute preservation, and absolutely no other risk exposure.
+                 </p>
+               </div>
+               </FadeUp>
+
+               {/* Medium Risk Card */}
+               <FadeUp delay={200}>
+               <div className="bg-[#171717] rounded-[2rem] p-8 md:p-10 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-500 group relative overflow-hidden h-full">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[80px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
+                 <h3 className="text-2xl font-bold text-white mb-3 relative z-10">Medium Risk</h3>
+                 <div className="w-full h-px bg-white/10 my-4 relative z-10" />
+                 <p className="text-lg font-bold text-[#FFDD33] mb-3 relative z-10">10% - 13% Managed Return</p>
+                 <p className="text-[14px] text-neutral-400 leading-relaxed max-w-[280px] relative z-10">
+                   A balanced trajectory targeting higher yields while maintaining a maximum calculated 20% capital risk threshold.
+                 </p>
+               </div>
+               </FadeUp>
+             </div>
+        </div>
+
         {/* Wide Center Card */}
         <FadeUp delay={100}>
           <div className="bg-[#F9FAFB] rounded-[2rem] p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -110,8 +147,8 @@ export default function Features() {
             <div className="bg-neutral-950 rounded-[2rem] p-10 flex flex-col relative overflow-hidden group cursor-pointer h-full">
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500" />
               <h3 className="text-[1.7rem] font-semibold text-white leading-[1.2] mt-8 z-10">Ready to Optimize Your Portfolio?</h3>
-              <a href="https://wa.me/918138058547?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20NGQ%20Assets'%20trading%20services%20and%20investment%20portfolios." target="_blank" rel="noopener noreferrer" className="group z-10 self-start mt-16 bg-[#FFDD33] text-neutral-950 px-7 py-3.5 rounded-full font-semibold flex items-center gap-2 hover:bg-[#ebc92c] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-md active:scale-[0.98] text-[15px] cursor-pointer">
-                Chat With Us <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+              <a href="mailto:contact@ngqassets.com" className="group z-10 self-start mt-16 bg-[#FFDD33] text-neutral-950 px-7 py-3.5 rounded-full font-semibold flex items-center gap-2 hover:bg-[#ebc92c] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-md active:scale-[0.98] text-[15px] cursor-pointer">
+                Send Message <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </FadeUp>

@@ -53,10 +53,8 @@ export async function sendContactEmail(formData: FormData) {
       `,
     };
 
-    // Fire and forget so we don't block the frontend UI with SMTP latency
-    transporter.sendMail(mailOptions).catch((error) => {
-      console.error('Background email sending error:', error);
-    });
+    // Must await on serverless platforms like Vercel, or the process will be killed before mail is sent
+    await transporter.sendMail(mailOptions);
 
     return { success: true, message: 'Your message has been securely delivered to our operational desk.' };
   } catch (error: any) {

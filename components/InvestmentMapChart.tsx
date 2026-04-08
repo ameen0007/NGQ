@@ -25,8 +25,8 @@ export default function InvestmentMapChart() {
   const growthPercentage = currentInvested > 0 ? ((profitAmt / currentInvested) * 100).toFixed(1) : "0.0";
 
   return (
-    <section className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 py-16">
-      <div className="bg-[#171717] rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden border border-[#333]">
+    <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-10 md:py-16">
+      <div className="bg-[#171717] rounded-3xl md:rounded-[2.5rem] p-5 sm:p-8 md:p-14 relative overflow-hidden border border-[#333]">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFDD33]/10 blur-[100px] rounded-full -mt-[250px] -mr-[250px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[100px] rounded-full -mb-[200px] -ml-[200px] pointer-events-none" />
@@ -42,16 +42,16 @@ export default function InvestmentMapChart() {
           <div className="flex flex-col items-start md:items-end gap-6 shrink-0">
             {/* The stats boxes */}
             {!isLoading && data.length > 0 && (
-              <div className="flex flex-wrap gap-3">
-                <div className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 flex flex-col items-start min-w-[160px]">
+              <div className="flex flex-col sm:flex-row w-full gap-3">
+                <div className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex flex-col items-start w-full sm:min-w-[160px]">
                   <span className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-1.5">Current AUM</span>
-                  <span className="text-2xl font-bold text-white">₹{currentInvested.toLocaleString()}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white">₹{currentInvested.toLocaleString()}</span>
                 </div>
-                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-6 py-4 flex flex-col items-start min-w-[160px]">
+                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-5 py-4 flex flex-col items-start w-full sm:min-w-[160px]">
                   <span className="text-[10px] font-bold tracking-[0.1em] text-emerald-500/80 uppercase mb-1.5">Net Profit Growth</span>
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-emerald-400">+{growthPercentage}%</span>
-                    <span className="text-sm font-semibold text-emerald-400/60 ml-1">
+                    <span className="text-xl sm:text-2xl font-bold text-emerald-400">+{growthPercentage}%</span>
+                    <span className="text-xs sm:text-sm font-semibold text-emerald-400/60 ml-1">
                       (₹{profitAmt.toLocaleString()})
                     </span>
                   </div>
@@ -72,7 +72,7 @@ export default function InvestmentMapChart() {
           </div>
         </div>
 
-        <div className="w-full h-[400px] relative z-10 flex items-center justify-center">
+        <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] relative z-10 flex items-center justify-center">
           {isLoading ? (
             <div className="text-neutral-500 animate-pulse text-sm tracking-widest uppercase font-bold">
               Aggregating Portfolio Data...
@@ -85,7 +85,7 @@ export default function InvestmentMapChart() {
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={data}
-                margin={{ top: 10, right: 0, left: -20, bottom: 0 }}
+                margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
               >
                 <defs>
                   <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
@@ -101,15 +101,15 @@ export default function InvestmentMapChart() {
                   dataKey="name" 
                   axisLine={false} 
                   tickLine={false} 
-                  tick={{ fill: "#a3a3a3", fontSize: 12, fontWeight: 500 }}
+                  tick={{ fill: "#a3a3a3", fontSize: 10, fontWeight: 500 }}
                   dy={10}
                 />
                 <YAxis 
                   axisLine={false} 
                   tickLine={false} 
-                  tick={{ fill: "#a3a3a3", fontSize: 12, fontWeight: 500 }}
+                  tick={{ fill: "#a3a3a3", fontSize: 10, fontWeight: 500 }}
                   tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}k`}
-                  dx={-10}
+                  width={40}
                 />
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
                 <Tooltip

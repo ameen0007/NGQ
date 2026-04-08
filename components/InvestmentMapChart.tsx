@@ -42,16 +42,16 @@ export default function InvestmentMapChart() {
           <div className="flex flex-col items-start md:items-end gap-6 shrink-0">
             {/* The stats boxes */}
             {!isLoading && data.length > 0 && (
-              <div className="flex flex-col sm:flex-row w-full gap-3">
-                <div className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 flex flex-col items-start w-full sm:min-w-[160px]">
-                  <span className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-1.5">Current AUM</span>
-                  <span className="text-xl sm:text-2xl font-bold text-white">₹{currentInvested.toLocaleString()}</span>
+              <div className="flex flex-col sm:flex-row w-full gap-3 sm:w-max">
+                <div className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 flex flex-col items-start w-full sm:w-max min-w-[160px]">
+                  <span className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-1.5 whitespace-nowrap">Current AUM</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">₹{currentInvested.toLocaleString()}</span>
                 </div>
-                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-5 py-4 flex flex-col items-start w-full sm:min-w-[160px]">
-                  <span className="text-[10px] font-bold tracking-[0.1em] text-emerald-500/80 uppercase mb-1.5">Net Profit Growth</span>
-                  <div className="flex items-center gap-2">
+                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-6 py-4 flex flex-col items-start w-full sm:w-max min-w-[160px]">
+                  <span className="text-[10px] font-bold tracking-[0.1em] text-emerald-500/80 uppercase mb-1.5 whitespace-nowrap">Net Profit Growth</span>
+                  <div className="flex items-center gap-1.5 flex-wrap sm:flex-nowrap whitespace-nowrap">
                     <span className="text-xl sm:text-2xl font-bold text-emerald-400">+{growthPercentage}%</span>
-                    <span className="text-xs sm:text-sm font-semibold text-emerald-400/60 ml-1">
+                    <span className="text-[12px] sm:text-sm font-semibold text-emerald-400/60 mt-0.5">
                       (₹{profitAmt.toLocaleString()})
                     </span>
                   </div>

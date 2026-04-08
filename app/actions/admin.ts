@@ -218,3 +218,57 @@ export async function updateClientCapitalAction(userId: string, amount: number) 
     return { error: error.message || "Failed to update capital balance." }
   }
 }
+
+//
+// 8. GET RECENT PERFORMANCE UPDATES
+//
+export async function getRecentUpdatesAction() {
+  try {
+    const { data: records, error } = await supabaseAdmin
+      .from("performance")
+      .select("*")
+      .order("year", { ascending: false })
+      .order("week", { ascending: false })
+      .limit(10);
+
+    if (error) throw new Error(error.message);
+
+    const userIds = Array.from(new Set(records?.map(r => r.user_id) || []));
+    const { data: profiles } = await supabaseAdmin.from("profiles").select("id, name, invested_fund").in("id", userIds);
+
+    const nameMap = new Map<string, any>();
+    if (profiles) {
+      profiles.forEach(p => nameMap.set(p.id, { name: p.name, invested_fund: p.invested_fund }));
+    }
+
+    const enriched = (records || []).map(r => {
+      const p = nameMap.get(r.user_id);
+      return {
+        ...r,
+        clientName: p?.name || "Unknown Client",
+        investedFund: p?.invested_fund || 0
+      };
+    });
+
+    return { data: enriched, error: null };
+  } catch (error: any) {
+    return { data: null, error: error.message };
+  }
+}
+
+//
+// 9. REVERT WEEKLY PERFORMANCE UPDATE
+//
+export async function revertUpdateAction(userId: string, week: number, year: number) {
+  try {
+    const { error } = await supabaseAdmin
+      .from("performance")
+      .delete()
+      .match({ user_id: userId, week, year });
+      
+    if (error) throw new Error(error.message);
+    return { success: true, message: "Update reverted successfully." };
+  } catch (error: any) {
+    return { error: error.message || "Failed to revert update." };
+  }
+}

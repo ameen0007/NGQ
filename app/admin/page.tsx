@@ -128,6 +128,7 @@ export default function AdminDashboardPage() {
     if (res.error) setModalMessage({ text: res.error, type: "error" });
     else {
       setModalMessage({ text: "Weekly performance beautifully recorded!", type: "success" });
+      await loadUsers();
       setTimeout(() => setWeeklyUpdateTarget(null), 1500);
     }
   }
@@ -277,9 +278,15 @@ export default function AdminDashboardPage() {
 
       {/* MASTER USER TABLE */}
       <section className="bg-neutral-500/5 rounded-[2rem] border border-neutral-500/10 shadow-sm p-6 md:p-10 overflow-hidden flex flex-col min-h-[500px]">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold tracking-tight mb-2">Network User Directory</h2>
-          <p className="text-[13px] opacity-60">Manage all internal admins and deployed client portfolios.</p>
+        <div className="mb-8 flex justify-between items-start">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight mb-2">Network User Directory</h2>
+            <p className="text-[13px] opacity-60">Manage all internal admins and deployed client portfolios.</p>
+          </div>
+          {/* Inline message for overall actions */}
+          <div className="min-h-[40px]">
+             <InlineModalMessage />
+          </div>
         </div>
 
         <div className="overflow-x-auto">

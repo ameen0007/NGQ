@@ -11,7 +11,8 @@ import {
   Sun,
   LifeBuoy, 
   LogOut,
-  Loader2
+  Loader2,
+  Activity
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
@@ -24,7 +25,7 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname();
   const router = useRouter();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [authChecked, setAuthChecked] = useState(false);
 
   // Skip auth check for the admin login page itself
@@ -71,6 +72,7 @@ export default function AdminLayout({
 
   const navItems = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
+    { name: "Client Updates", href: "/admin/updates", icon: Activity },
   ];
 
   const handleLogout = async () => {

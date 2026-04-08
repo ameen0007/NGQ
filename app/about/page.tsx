@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, ShieldCheck, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import InvestmentMapChart from "@/components/InvestmentMapChart";
 
 export default function AboutPage() {
   const [loaded, setLoaded] = useState(false);
@@ -146,6 +147,9 @@ export default function AboutPage() {
              </div>
           </div>
         </section>
+
+        {/* Investment Map Chart */}
+        <InvestmentMapChart />
 
         {/* Our Approach Section */}
         <section className="bg-[#F9FAFB] w-full py-16 lg:py-24">

@@ -51,6 +51,7 @@ export default function Footer() {
 
           <form 
             onSubmit={handleContactSubmit}
+            suppressHydrationWarning={true}
             className="flex w-full lg:w-[500px] flex-col gap-4 bg-white/5 p-8 rounded-[2rem] border border-white/10 shrink-0"
           >
             {formMessage.text && (
@@ -65,20 +66,20 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row gap-4">
               <div className="w-full">
                 <label className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-2 block">Your Name</label>
-                <input type="text" name="name" required disabled={formPending} placeholder="John Doe" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
+                <input type="text" name="name" suppressHydrationWarning required disabled={formPending} placeholder="John Doe" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
               </div>
               <div className="w-full">
                 <label className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-2 block">Email Address</label>
-                <input type="email" name="email" required disabled={formPending} placeholder="john@example.com" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
+                <input type="email" name="email" suppressHydrationWarning required disabled={formPending} placeholder="john@example.com" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
               </div>
             </div>
             <div>
               <label className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-2 block">Subject</label>
-              <input type="text" name="subject" required disabled={formPending} placeholder="How can we assist you?" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
+              <input type="text" name="subject" suppressHydrationWarning required disabled={formPending} placeholder="How can we assist you?" className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 transition-all disabled:opacity-50" />
             </div>
             <div>
               <label className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase mb-2 block">Message</label>
-              <textarea name="message" required disabled={formPending} placeholder="Tell us about your portfolio goals..." rows={4} className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 resize-none transition-all disabled:opacity-50" />
+              <textarea name="message" suppressHydrationWarning required disabled={formPending} placeholder="Tell us about your portfolio goals..." rows={4} className="w-full bg-black/40 border border-white/10 focus:border-[#FFDD33] rounded-xl px-4 py-3.5 text-[14px] outline-none text-white placeholder:text-neutral-600 resize-none transition-all disabled:opacity-50" />
             </div>
             <button type="submit" disabled={formPending} className="w-full bg-[#FFDD33] text-neutral-950 font-bold text-[14px] py-4 rounded-xl hover:bg-[#ebc92c] transition-all duration-300 hover:-translate-y-[2px] shadow-[0_4px_14px_rgba(255,221,51,0.39)] flex justify-center items-center mt-2 group disabled:opacity-70 disabled:cursor-not-allowed">
               {formPending ? <Loader2 className="w-5 h-5 animate-spin text-neutral-800" /> : <><span className="mr-2">Send Message</span> <span className="group-hover:translate-x-1 transition-transform">→</span></>}

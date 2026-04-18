@@ -38,7 +38,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isMaintenanceMode = true; // Set to true to hide the site behind a maintenance screen
+  const isMaintenanceMode = false; // Set to true to hide the site behind a maintenance screen
 
   if (isMaintenanceMode) {
     return (

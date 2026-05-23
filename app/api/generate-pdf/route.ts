@@ -34,9 +34,8 @@ export async function POST(req: Request) {
       // Use @sparticuz/chromium + puppeteer-core for Vercel Serverless
       browser = await puppeteerCore.launch({
         args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
+        headless: true,
       });
     }
 
@@ -76,7 +75,7 @@ export async function POST(req: Request) {
     }
 
     // Return PDF as buffer
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(Buffer.from(pdfBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',

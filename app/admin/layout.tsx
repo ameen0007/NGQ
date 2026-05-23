@@ -12,7 +12,7 @@ import {
   LifeBuoy, 
   LogOut,
   Loader2,
-  Activity
+  Users
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
@@ -72,7 +72,7 @@ export default function AdminLayout({
 
   const navItems = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-    { name: "Client Updates", href: "/admin/updates", icon: Activity },
+    { name: "Clients", href: "/admin/clients", icon: Users },
   ];
 
   const handleLogout = async () => {

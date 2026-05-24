@@ -29,8 +29,25 @@ const helveticaNowDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Finzavio",
-  description: "Control your financial future easily with Finzavio.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://finzavio.com'),
+  title: {
+    default: "Finzavio | Control Your Financial Future",
+    template: "%s | Finzavio",
+  },
+  description: "FINZAVIO helps individuals and families better organize, understand, and review their financial position through structured wellness reviews and goal-focused analysis.",
+  openGraph: {
+    title: "Finzavio | Control Your Financial Future",
+    description: "FINZAVIO helps individuals and families better organize, understand, and review their financial position.",
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://finzavio.com',
+    siteName: "Finzavio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finzavio | Control Your Financial Future",
+    description: "FINZAVIO helps individuals and families better organize, understand, and review their financial position.",
+  },
 };
 
 export default function RootLayout({

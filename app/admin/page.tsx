@@ -193,7 +193,7 @@ export default function AdminDashboardPage() {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) { router.push("/login"); return; }
       const { data: profileData } = await supabase.from("profiles").select("*").eq("id", session.user.id).single();
-      if (profileData?.role !== "admin") { router.push("/portfolio"); return; }
+      if (profileData?.role !== "admin") { router.push("/"); return; }
       setProfile({ ...profileData, email: session.user.email });
 
       const { data: allProfiles } = await getAllProfiles();
@@ -238,7 +238,7 @@ export default function AdminDashboardPage() {
         const sel = value.includes(o.value);
         return (
           <button key={o.value} type="button" onClick={() => toggle(o.value)}
-            className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#FFDD33] text-black border-[#FFDD33] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>
+            className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#191970] text-white border-[#191970] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>
             {o.label}
           </button>
         );
@@ -256,7 +256,7 @@ export default function AdminDashboardPage() {
           <span className="bg-neutral-500/10 border border-neutral-500/20 text-[10px] font-bold tracking-[0.1em] uppercase px-3 py-1 rounded-full">Admin View</span>
         </div>
         <div className="flex items-center gap-4 bg-transparent border border-neutral-500/20 rounded-full p-1.5 pr-5 shadow-sm">
-          <div className="w-10 h-10 rounded-full bg-[#FFDD33] flex items-center justify-center border-2 border-inherit overflow-hidden shrink-0">
+          <div className="w-10 h-10 rounded-full bg-[#191970] flex items-center justify-center border-2 border-inherit overflow-hidden shrink-0">
             <svg viewBox="0 0 24 24" className="w-7 h-7 text-neutral-800" fill="currentColor">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
             </svg>
@@ -274,7 +274,7 @@ export default function AdminDashboardPage() {
       <section className="flex flex-col sm:flex-row gap-4">
         <button
           onClick={() => { setIsCreateClientOpen(true); }}
-          className="group flex-1 flex items-center justify-center lg:justify-start gap-4 bg-[#FFDD33] text-black p-5 lg:px-8 lg:py-4 rounded-2xl hover:bg-[#EBC92C] transition-all duration-300 hover:-translate-y-1 shadow-lg active:scale-[0.98]"
+          className="group flex-1 flex items-center justify-center lg:justify-start gap-4 bg-[#191970] text-white p-5 lg:px-8 lg:py-4 rounded-2xl hover:bg-[#111150] transition-all duration-300 hover:-translate-y-1 shadow-lg active:scale-[0.98]"
         >
           <div className="w-10 h-10 bg-black/10 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
             <Building className="w-5 h-5 text-black" />

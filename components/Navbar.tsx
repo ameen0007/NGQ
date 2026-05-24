@@ -35,8 +35,8 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0 cursor-pointer">
-            <Image src="/Mainlogo.png" alt="NGQ Assets" width={28} height={28} className="object-contain w-auto h-auto" />
-            <span className={`${inter.className} font-bold text-base text-[#171717] tracking-tight`}>NGQ Assets</span>
+            <Image src="/Mainlogo.png" alt="Finzavio" width={28} height={28} className="object-contain w-auto h-auto" />
+            <span className={`${inter.className} font-bold text-base text-[#171717] tracking-tight`}>Finzavio</span>
           </Link>
 
           {/* Center Nav Links - Desktop */}
@@ -55,10 +55,10 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-4">
             <Link
-              href="/portfolio"
-              className="hidden md:inline-flex bg-[#171717] text-white px-5 py-2 rounded-full font-semibold text-[12px] hover:bg-[#2a2a2a] transition-all duration-300 shadow-[0_0_0_3px_rgba(23,23,23,0.08)] hover:shadow-[0_0_0_5px_rgba(23,23,23,0.12)] hover:-translate-y-[2px] active:scale-[0.98] cursor-pointer"
+              href="/calculators"
+              className="hidden md:inline-flex bg-[#191970] text-white px-5 py-2 rounded-full font-semibold text-[12px] hover:bg-[#111150] transition-all duration-300 shadow-[0_0_0_3px_rgba(25,25,112,0.08)] hover:shadow-[0_0_0_5px_rgba(25,25,112,0.12)] hover:-translate-y-[2px] active:scale-[0.98] cursor-pointer"
             >
-              My Portfolio
+              Calculators
             </Link>
 
             {/* Hamburger - Mobile */}
@@ -113,11 +113,11 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/portfolio"
+            href="/calculators"
             onClick={() => setMenuOpen(false)}
-            className="mt-8 flex items-center justify-center bg-[#171717] text-white px-6 py-3 rounded-full font-semibold text-[14px] hover:bg-[#2a2a2a] transition-all duration-300 shadow-[0_0_0_4px_rgba(23,23,23,0.08)] hover:shadow-lg hover:-translate-y-[2px] active:scale-[0.98] w-full cursor-pointer"
+            className="mt-8 flex items-center justify-center bg-[#191970] text-white px-6 py-3 rounded-full font-semibold text-[14px] hover:bg-[#111150] transition-all duration-300 shadow-[0_0_0_4px_rgba(25,25,112,0.08)] hover:shadow-lg hover:-translate-y-[2px] active:scale-[0.98] w-full cursor-pointer"
           >
-            My Portfolio
+            Calculators
           </Link>
         </div>
       </div>

@@ -274,7 +274,7 @@ export default function ClientForm({
         const sel = value.includes(o.value);
         return (
           <button key={o.value} type="button" onClick={() => toggle(o.value)}
-            className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#FFDD33] text-black border-[#FFDD33] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>
+            className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#191970] text-white border-[#191970] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>
             {o.label}
           </button>
         );
@@ -318,7 +318,7 @@ export default function ClientForm({
             className={`${input} ${sameAsMobile ? "bg-neutral-100 text-neutral-400" : ""}`}
           />
           <label className="flex items-center gap-2 mt-2 cursor-pointer select-none w-fit">
-            <input type="checkbox" checked={sameAsMobile} onChange={e => setSameAsMobile(e.target.checked)} className="w-4 h-4 accent-[#FFDD33]" />
+            <input type="checkbox" checked={sameAsMobile} onChange={e => setSameAsMobile(e.target.checked)} className="w-4 h-4 accent-[#191970]" />
             <span className="text-[12px] text-neutral-500">Same as mobile</span>
           </label>
         </div>

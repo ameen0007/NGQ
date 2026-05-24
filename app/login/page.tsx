@@ -48,7 +48,7 @@ export default function LoginPage() {
         if (profileData?.role === "admin") {
           router.push("/admin");
         } else {
-          router.push("/portfolio");
+          router.push("/");
         }
       }
     } catch (err: any) {
@@ -59,7 +59,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-neutral-50 font-sans selection:bg-[#FFDD33] selection:text-black">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-neutral-50 font-sans selection:bg-[#191970] selection:text-white">
       {/* Background Blurs */}
       <div className="absolute top-[10%] left-[5%] w-72 h-72 bg-gradient-to-tr from-cyan-200 via-emerald-100 to-rose-200 rounded-full blur-[100px] opacity-40 mix-blend-multiply pointer-events-none" />
       <div className="absolute bottom-[20%] right-[10%] w-80 h-80 bg-gradient-to-tr from-amber-200 to-orange-100 rounded-full blur-[100px] opacity-50 mix-blend-multiply pointer-events-none" />
@@ -69,12 +69,12 @@ export default function LoginPage() {
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 flex items-center gap-3">
           <Image 
             src="/Mainlogo.png" 
-            alt="NGQ Assets Logo" 
+            alt="Finzavio Logo" 
             width={40} 
             height={40} 
             className="drop-shadow-sm rounded-lg" 
           />
-          NGQ Assets
+          Finzavio
         </h1>
         <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-neutral-500 mt-3 uppercase">
           The Lucid Atelier of Finance
@@ -104,8 +104,8 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@ngqassets.com"
-                className="w-full bg-[#F3F4F6] border-2 border-transparent focus:bg-white focus:border-[#FFDD33] rounded-xl pl-11 pr-4 py-3.5 text-[14px] text-neutral-900 outline-none transition-all placeholder:text-neutral-400 ring-4 ring-transparent focus:ring-[#FFDD33]/20"
+                placeholder="name@finzavio.com"
+                className="w-full bg-[#F3F4F6] border-2 border-transparent focus:bg-white focus:border-[#191970] rounded-xl pl-11 pr-4 py-3.5 text-[14px] text-neutral-900 outline-none transition-all placeholder:text-neutral-400 ring-4 ring-transparent focus:ring-[#191970]/20"
               />
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-[#F3F4F6] border-2 border-transparent focus:bg-white focus:border-[#FFDD33] rounded-xl pl-11 pr-11 py-3.5 text-[14px] text-neutral-900 outline-none transition-all placeholder:text-neutral-400 ring-4 ring-transparent focus:ring-[#FFDD33]/20"
+                className="w-full bg-[#F3F4F6] border-2 border-transparent focus:bg-white focus:border-[#191970] rounded-xl pl-11 pr-11 py-3.5 text-[14px] text-neutral-900 outline-none transition-all placeholder:text-neutral-400 ring-4 ring-transparent focus:ring-[#191970]/20"
               />
               <button 
                 type="button" 
@@ -144,7 +144,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full relative flex items-center justify-center bg-[#FFDD33] text-neutral-900 font-bold text-[14px] py-4 rounded-xl hover:bg-[#EBC92C] transition-all duration-300 shadow-[0_4px_14px_rgba(255,221,51,0.39)] hover:shadow-[0_6px_20px_rgba(255,221,51,0.39)] active:scale-[0.98] mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full relative flex items-center justify-center bg-[#191970] text-white font-bold text-[14px] py-4 rounded-xl hover:bg-[#111150] transition-all duration-300 shadow-[0_4px_14px_rgba(25, 25, 112,0.39)] hover:shadow-[0_6px_20px_rgba(25, 25, 112,0.39)] active:scale-[0.98] mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? <Loader2 className="w-5 h-5 animate-spin text-neutral-800" /> : "Sign In"}
           </button>
@@ -153,8 +153,8 @@ export default function LoginPage() {
         <div className="mt-8 text-center">
           <p className="text-[13px] text-neutral-500">
             No Account?{" "}
-            <a href="https://wa.me/918138058547?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20NGQ%20Assets'%20trading%20services%20and%20investment%20portfolios." target="_blank" rel="noopener noreferrer" className="font-bold text-[#A28822] hover:text-[#8a731d] transition-colors">
-              Chat With Us
+            <a href="https://wa.me/919061607577?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20Finzavio's%20financial%20wellness%20reviews%20and%20structured%20insights." target="_blank" rel="noopener noreferrer" className="font-bold text-[#A28822] hover:text-[#8a731d] transition-colors">
+              Chat With FINZAVIO
             </a>
           </p>
         </div>
@@ -164,12 +164,12 @@ export default function LoginPage() {
 
       {/* Copyright */}
       <div className="z-10 mt-6 mb-12 text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase animate-in fade-in duration-1000 delay-300 fill-mode-both">
-        © {new Date().getFullYear()} NGQ ASSETS. MEMBER SIPC.
+        © {new Date().getFullYear()} FINZAVIO. MEMBER SIPC.
       </div>
       
       {/* Bottom Bar Pattern */}
       <div className="absolute bottom-0 left-0 right-0 h-4 md:h-6 bg-neutral-900">
-        <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#FFDD33] to-transparent opacity-50 absolute top-0" />
+        <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#191970] to-transparent opacity-50 absolute top-0" />
         <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #444 1px, transparent 1px)', backgroundSize: '8px 8px' }} />
       </div>
     </div>

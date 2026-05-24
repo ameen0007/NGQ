@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 py-8 lg:py-28 flex flex-col lg:flex-row items-center gap-0 lg:gap-10">
+    <section className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 py-8 lg:py-16 flex flex-col lg:flex-row items-center gap-0 lg:gap-10">
       {/* Left: Mockup Composition — percentage-based for responsiveness */}
       <div className="w-full lg:w-[55%] relative aspect-square md:aspect-[5/4]">
 
@@ -29,7 +29,7 @@ export default function Hero() {
         >
           <Image
             src="/mobilemockup.png"
-            alt="NGQ Assets mobile app"
+            alt="Finzavio mobile app"
             width={400}
             height={650}
             className="w-full h-auto drop-shadow-2xl"
@@ -39,7 +39,7 @@ export default function Hero() {
 
         {/* Market Reach Card - fades DOWN */}
         <div
-          className="absolute right-[7%] md:right-[10%] top-[15%] md:top-[8%] w-[41%] md:w-[42%] z-20"
+          className="absolute right-[9%] md:right-[10%] top-[10%] md:top-[7%] w-[36%] md:w-[36%] z-20"
           style={{
             transition: "all 1.2s ease-out 0.3s",
             opacity: loaded ? 1 : 0,
@@ -47,7 +47,7 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/mobilefrontcard.png"
+            src="/mobilecard.png"
             alt="Market Reach card"
             width={250}
             height={310}
@@ -67,18 +67,18 @@ export default function Hero() {
         }}
       >
         <h1 className="text-4xl md:text-[3.5rem] font-medium tracking-tight leading-[1.15] mb-6 text-[#171717]">
-          Precision Trading.<br />Disciplined Asset<br className="hidden md:block"/> Management.
+          Financial Clarity.<br />Structured Wealth<br className="hidden md:block" /> Growth.
         </h1>
         <p className="text-[#98A2B3] text-base md:text-xl max-w-[420px] mb-10 leading-relaxed mx-auto lg:mx-0">
-          Headquartered in Dubai, we navigate Indian and international markets with risk-managed, data-driven trading strategies designed for consistent wealth accumulation.
+          Helping individuals and families understand, organize, and improve their financial journey through structured insights, wellness reviews, and goal-focused financial guidance.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start mb-14 w-full gap-4">
-          <Link href="/portfolio" className="group flex items-center justify-center gap-2 bg-[#FFDD33] text-[#171717] px-8 py-3.5 sm:px-10 sm:py-4 rounded-full font-semibold hover:bg-[#ebc92c] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98] text-[15px] sm:text-[16px] whitespace-nowrap">
-            Explore My Portfolio <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          <Link href="/calculators" className="group flex items-center justify-center gap-2 bg-[#191970] text-white px-8 py-3.5 sm:px-10 sm:py-4 rounded-full font-semibold hover:bg-[#111150] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98] text-[15px] sm:text-[16px] whitespace-nowrap">
+            Check Your Financial Wellness <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-          <a href="https://wa.me/918138058547?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20NGQ%20Assets'%20trading%20services%20and%20investment%20portfolios." target="_blank" rel="noopener noreferrer" className="bg-[#F9FAFB] border border-neutral-200 text-[#171717] px-8 py-3.5 sm:px-10 sm:py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98] text-[15px] sm:text-[16px] whitespace-nowrap">
-            Chat With Us
+          <a href="https://wa.me/919061607577?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20Finzavio's%20financial%20wellness%20reviews%20and%20structured%20insights." target="_blank" rel="noopener noreferrer" className="bg-[#F9FAFB] border border-neutral-200 text-[#171717] px-8 py-3.5 sm:px-10 sm:py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98] text-[15px] sm:text-[16px] whitespace-nowrap">
+            Talk With FINZAVIO
           </a>
         </div>
 
@@ -92,10 +92,10 @@ export default function Hero() {
           <div className="flex flex-col text-left">
             <div className="flex items-center gap-2 text-lg sm:text-xl font-bold text-[#171717]">
               <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400" />
-              3 Years+ Experience
+              18 Years+ Experience
             </div>
             <p className="text-[12px] sm:text-[13px] text-[#98A2B3] font-medium leading-tight mt-1">
-              Trusted by clients &<br />experienced professionals
+              Goal-Based Financial Understanding<br />Structured insights for smarter financial direction
             </p>
           </div>
         </div>

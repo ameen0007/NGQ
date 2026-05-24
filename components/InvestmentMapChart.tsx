@@ -28,7 +28,7 @@ export default function InvestmentMapChart() {
     <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-10 md:py-16">
       <div className="bg-[#171717] rounded-3xl md:rounded-[2.5rem] p-5 sm:p-8 md:p-14 relative overflow-hidden border border-[#333]">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFDD33]/10 blur-[100px] rounded-full -mt-[250px] -mr-[250px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#191970]/10 blur-[100px] rounded-full -mt-[250px] -mr-[250px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[100px] rounded-full -mb-[200px] -ml-[200px] pointer-events-none" />
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-start mb-12 relative z-10 gap-8">
@@ -65,7 +65,7 @@ export default function InvestmentMapChart() {
                 <span className="text-neutral-400 text-xs font-semibold uppercase tracking-wider">Base Invested (AUM)</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#FFDD33]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#191970]" />
                 <span className="text-neutral-400 text-xs font-semibold uppercase tracking-wider">Total Cumulative Value</span>
               </div>
             </div>
@@ -89,8 +89,8 @@ export default function InvestmentMapChart() {
               >
                 <defs>
                   <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FFDD33" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#FFDD33" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#191970" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#191970" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="colorInvested" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
@@ -127,7 +127,7 @@ export default function InvestmentMapChart() {
                   type="monotone"
                   dataKey="totalValue"
                   name="Total Portfolio Value"
-                  stroke="#FFDD33"
+                  stroke="#191970"
                   strokeWidth={3}
                   fillOpacity={1}
                   fill="url(#colorTotal)"

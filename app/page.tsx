@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans antialiased text-neutral-900 selection:bg-[#FFDD33] selection:text-black">
+    <div className="font-sans antialiased text-white selection:bg-[#191970] selection:text-white">
       <main className="flex flex-col min-h-screen bg-white overflow-hidden">
         <Navbar />
         <Hero />

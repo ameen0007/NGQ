@@ -4,7 +4,7 @@ import { Lock, Mail, Eye, ShieldAlert } from "lucide-react";
 
 export default function AdminLoginPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#0A0A0A] font-sans selection:bg-[#FFDD33] selection:text-black">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#0A0A0A] font-sans selection:bg-[#191970] selection:text-white">
       {/* Background Deep Blurs */}
       <div className="absolute top-[10%] left-[5%] w-72 h-72 bg-gradient-to-tr from-purple-900/40 via-blue-900/40 to-cyan-900/20 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[10%] w-80 h-80 bg-gradient-to-tr from-[#3f310b] to-[#1a1405] rounded-full blur-[100px] pointer-events-none" />
@@ -15,13 +15,13 @@ export default function AdminLoginPage() {
           <div className="bg-white rounded-lg p-1.5 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
             <Image 
               src="/Mainlogo.png" 
-              alt="NGQ Assets Logo" 
+              alt="Finzavio Logo" 
               width={32} 
               height={32} 
               className="rounded-md" 
             />
           </div>
-          NGQ Assets
+          Finzavio
         </h1>
         <div className="flex items-center gap-2 mt-4">
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.6)]" />
@@ -44,8 +44,8 @@ export default function AdminLoginPage() {
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500 group-focus-within:text-white transition-colors" />
               <input
                 type="email"
-                placeholder="sysadmin@ngqassets.com"
-                className="w-full bg-[#1A1A1A] border-2 border-transparent focus:bg-[#222] focus:border-[#FFDD33]/50 rounded-xl pl-11 pr-4 py-3.5 text-[14px] text-white outline-none transition-all placeholder:text-neutral-600 ring-4 ring-transparent focus:ring-[#FFDD33]/10"
+                placeholder="sysadmin@finzavio.com"
+                className="w-full bg-[#1A1A1A] border-2 border-transparent focus:bg-[#222] focus:border-[#191970]/50 rounded-xl pl-11 pr-4 py-3.5 text-[14px] text-white outline-none transition-all placeholder:text-neutral-600 ring-4 ring-transparent focus:ring-[#191970]/10"
               />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function AdminLoginPage() {
               <input
                 type="password"
                 placeholder="••••••••••••"
-                className="w-full bg-[#1A1A1A] border-2 border-transparent focus:bg-[#222] focus:border-[#FFDD33]/50 rounded-xl pl-11 pr-11 py-3.5 text-[14px] text-white outline-none transition-all placeholder:text-neutral-600 ring-4 ring-transparent focus:ring-[#FFDD33]/10"
+                className="w-full bg-[#1A1A1A] border-2 border-transparent focus:bg-[#222] focus:border-[#191970]/50 rounded-xl pl-11 pr-11 py-3.5 text-[14px] text-white outline-none transition-all placeholder:text-neutral-600 ring-4 ring-transparent focus:ring-[#191970]/10"
               />
               <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white transition-colors">
                 <Eye className="w-4 h-4" />
@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
       {/* Bottom Legal / Version */}
       <div className="z-10 mt-12 mb-8 text-[10px] font-bold tracking-[0.1em] text-neutral-600 uppercase flex flex-col items-center gap-2 animate-in fade-in duration-1000 delay-300 fill-mode-both">
         <span>sys.admin.ver_2.4.1</span>
-        <span>© {new Date().getFullYear()} NGQ ASSETS INTERNAL.</span>
+        <span>© {new Date().getFullYear()} FINZAVIO INTERNAL.</span>
       </div>
       
       {/* Bottom Bar Pattern */}

@@ -51,7 +51,7 @@ export default function AdminLayout({
         .single();
 
       if (profileData?.role !== "admin") {
-        router.replace("/portfolio");
+        router.replace("/");
         return;
       }
 
@@ -81,7 +81,7 @@ export default function AdminLayout({
   };
 
   return (
-    <div className={`flex min-h-screen font-sans antialiased selection:bg-[#FFDD33] selection:text-black transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A] text-white' : 'bg-[#F9FAFB] text-[#171717]'}`}>
+    <div className={`flex min-h-screen font-sans antialiased selection:bg-[#191970] selection:text-white transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A] text-white' : 'bg-[#F9FAFB] text-white'}`}>
       
       {/* Sidebar - Desktop */}
       <aside className={`hidden md:flex flex-col w-64 lg:w-72 border-r shrink-0 transition-colors duration-500 ${isDark ? 'bg-[#141414] border-white/5' : 'bg-white border-neutral-100'}`}>
@@ -90,9 +90,9 @@ export default function AdminLayout({
         <div className="p-8 pb-10">
           <Link href="/" className="flex flex-col gap-1 shrink-0 group">
             <div className="flex items-center gap-2">
-              <Image src="/Mainlogo.png" alt="NGQ Assets" width={24} height={24} className="object-contain" />
-              <span className={`font-bold text-[18px] tracking-tight group-hover:text-[#FFDD33] transition-colors ${isDark ? 'text-white' : 'text-[#171717]'}`}>
-                NGQ Admin
+              <Image src="/Mainlogo.png" alt="Finzavio" width={24} height={24} className="object-contain" />
+              <span className={`font-bold text-[18px] tracking-tight group-hover:text-[#191970] transition-colors ${isDark ? 'text-white' : 'text-[#171717]'}`}>
+                Finzavio Admin
               </span>
             </div>
             <span className="text-[9px] font-bold tracking-[0.15em] text-[#98A2B3] uppercase ml-8 mt-1 block">
@@ -112,7 +112,7 @@ export default function AdminLayout({
                 href={item.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-[12px] font-medium transition-all duration-300 ${
                   isActive 
-                    ? "bg-[#FFDD33] text-[#171717] shadow-sm" 
+                    ? "bg-[#191970] text-white shadow-sm" 
                     : isDark ? "text-neutral-400 hover:bg-white/5 hover:text-white" : "text-neutral-500 hover:bg-[#F9FAFB] hover:text-[#171717]"
                 }`}
               >
@@ -134,7 +134,7 @@ export default function AdminLayout({
               <span className="text-[14px]">{isDark ? "Switch Light Mode" : "Switch Dark Mode"}</span>
             </div>
             <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0">
-              {isDark ? <Sun className="w-4 h-4 text-orange-500" /> : <Moon className="w-4 h-4 text-[#FFDD33]" />}
+              {isDark ? <Sun className="w-4 h-4 text-orange-500" /> : <Moon className="w-4 h-4 text-[#191970]" />}
             </div>
           </button>
         </nav>
@@ -157,12 +157,12 @@ export default function AdminLayout({
         {/* Mobile Header (Visible only on small screens) */}
         <div className={`md:hidden flex items-center justify-between border-b p-4 sticky top-0 z-30 transition-colors duration-500 ${isDark ? 'bg-[#141414] border-white/5' : 'bg-white border-neutral-100'}`}>
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/Mainlogo.png" alt="NGQ Assets" width={24} height={24} className="object-contain" />
-            <span className={`font-bold text-[16px] tracking-tight ${isDark ? 'text-white' : 'text-[#171717]'}`}>NGQ Admin</span>
+            <Image src="/Mainlogo.png" alt="Finzavio" width={24} height={24} className="object-contain" />
+            <span className={`font-bold text-[16px] tracking-tight ${isDark ? 'text-white' : 'text-[#171717]'}`}>Finzavio Admin</span>
           </Link>
           <div className="flex gap-2">
             <button onClick={() => setIsDark(!isDark)} className={`w-10 h-10 flex items-center justify-center rounded-xl border ${isDark ? 'bg-[#1E1E1E] border-white/10' : 'bg-[#F9FAFB] border-neutral-100'}`}>
-              {isDark ? <Moon className="w-5 h-5 text-[#FFDD33]" /> : <Sun className="w-5 h-5 text-orange-500" />}
+              {isDark ? <Moon className="w-5 h-5 text-[#191970]" /> : <Sun className="w-5 h-5 text-orange-500" />}
             </button>
             <button className={`w-10 h-10 flex items-center justify-center rounded-xl border ${isDark ? 'bg-white/5 border-white/5 text-white' : 'bg-[#F9FAFB] border-neutral-100 text-[#171717]'}`}>
               <LayoutDashboard className="w-5 h-5" />

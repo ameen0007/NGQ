@@ -4,7 +4,7 @@ export default function SkeletonLoader() {
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex flex-col items-center justify-center relative overflow-hidden w-full inset-0">
       {/* Background glowing orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#FFDD33]/20 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#191970]/20 rounded-full blur-[100px] animate-pulse" />
       
       <div className="z-10 flex flex-col items-center gap-6 w-full max-w-2xl px-6">
         

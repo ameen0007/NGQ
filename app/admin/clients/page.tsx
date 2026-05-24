@@ -170,7 +170,7 @@ export default function ClientsDirectoryPage() {
     <div className="flex flex-wrap gap-2">
       {options.map(o => {
         const sel = value.includes(o.value);
-        return <button key={o.value} type="button" onClick={() => toggle(o.value)} className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#FFDD33] text-black border-[#FFDD33] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>{o.label}</button>;
+        return <button key={o.value} type="button" onClick={() => toggle(o.value)} className={`px-5 py-2.5 rounded-xl text-[14px] font-semibold border transition-all duration-150 ${sel ? "bg-[#191970] text-white border-[#191970] shadow-sm" : "bg-[#F9FAFB] text-neutral-600 border-neutral-200 hover:border-neutral-400"}`}>{o.label}</button>;
       })}
     </div>
   );
@@ -203,7 +203,7 @@ export default function ClientsDirectoryPage() {
       <section className="flex justify-end">
         <div className="relative w-full max-w-md">
           <Search className="w-5 h-5 text-neutral-400 absolute left-4 top-1/2 -translate-y-1/2" />
-          <input type="text" placeholder="Search by name, email, phone, or city..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-[14px] outline-none focus:border-[#FFDD33] transition-colors shadow-sm" />
+          <input type="text" placeholder="Search by name, email, phone, or city..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-[14px] outline-none focus:border-[#191970] transition-colors shadow-sm" />
         </div>
       </section>
 

@@ -85,9 +85,10 @@ export async function POST(req: Request) {
 
   } catch (error: any) {
     console.error('PDF Generation Error:', error);
-    require('fs').writeFileSync('pdf-error.log', String(error.stack || error.message));
+    // In Vercel, the filesystem is read-only. We only log to console.
+    // Return standard error response
     return NextResponse.json(
-      { error: 'Failed to generate PDF', details: error.message },
+      { error: 'Failed to generate PDF', details: error?.message || 'Unknown error' },
       { status: 500 }
     );
   }

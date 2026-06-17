@@ -44,8 +44,8 @@ export async function POST(req: Request) {
     // Set viewport to A4 dimensions approximately for better rendering context
     await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
     
-    // Navigate and wait for network to be idle so charts render fully
-    await page.goto(targetUrl, { waitUntil: 'networkidle0', timeout: 30000 });
+    // Navigate and wait for network to be idle so charts render fully. Using networkidle2 to prevent Next.js HMR websocket from causing timeouts
+    await page.goto(targetUrl, { waitUntil: 'networkidle2', timeout: 30000 });
 
     // Generate PDF
     const pdfBuffer = await page.pdf({
@@ -85,6 +85,7 @@ export async function POST(req: Request) {
 
   } catch (error: any) {
     console.error('PDF Generation Error:', error);
+    require('fs').writeFileSync('pdf-error.log', String(error.stack || error.message));
     return NextResponse.json(
       { error: 'Failed to generate PDF', details: error.message },
       { status: 500 }

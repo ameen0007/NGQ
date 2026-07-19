@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, ShieldCheck, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import InvestmentMapChart from "@/components/InvestmentMapChart";
 
 export default function AboutPage() {
@@ -122,28 +123,33 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Founder 1 */}
-            <div className="flex flex-col items-center group text-center">
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
-                <Image src="/men1.jpg" alt="Abdul Rahim Nissar" width={224} height={224} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <Link href="/founder" className="flex flex-col items-center group text-center cursor-pointer">
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center relative">
+                <Image src="/Founder & CEO.jpeg" alt="Mahin Ahmad, CWM" width={224} height={224} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-full">
+                  <span className="text-white font-semibold text-sm tracking-wider uppercase flex items-center gap-2">
+                    Profile <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#171717]">Abdul Rahim Nissar</h3>
-              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Founder</p>
-            </div>
+              <h3 className="text-2xl font-bold text-[#171717] group-hover:text-[#191970] transition-colors duration-300">Mahin Ahmad, CWM</h3>
+              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Founder & CEO</p>
+            </Link>
             {/* Founder 2 */}
             <div className="flex flex-col items-center group text-center">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
-                <Image src="/men2.jpg" alt="Mehroof rahman" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
+                <Image src="/Director – Media & Communications.jpeg" alt="Hasna Mahin" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
               </div>
-              <h3 className="text-2xl font-bold text-[#171717]">Mehroof rahman</h3>
-              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Co-founder</p>
+              <h3 className="text-2xl font-bold text-[#171717]">Hasna Mahin</h3>
+              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Director – Media & Communications</p>
             </div>
             {/* Founder 3 */}
             <div className="flex flex-col items-center group text-center">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
-                <Image src="/men3.jpg" alt="Abee sinan" width={224} height={224} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <Image src="/Investment Research Associate.jpeg" alt="M.S. Sebin" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
               </div>
-              <h3 className="text-2xl font-bold text-[#171717]">Abee sinan</h3>
-              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Co-founder</p>
+              <h3 className="text-2xl font-bold text-[#171717]">M.S. Sebin</h3>
+              <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Investment Research Associate</p>
             </div>
           </div>
         </section>

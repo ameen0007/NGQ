@@ -138,9 +138,9 @@ export default function AboutPage() {
             {/* Founder 2 */}
             <div className="flex flex-col items-center group text-center">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white mx-auto flex items-center justify-center">
-                <Image src="/Director – Media & Communications.jpeg" alt="Hasna Mahin" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
+                <Image src="/Director – Media & Communications.jpeg" alt="Hasna Shahul" width={224} height={224} className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110" />
               </div>
-              <h3 className="text-2xl font-bold text-[#171717]">Hasna Mahin</h3>
+              <h3 className="text-2xl font-bold text-[#171717]">Hasna Shahul</h3>
               <p className="text-[#A28822] font-bold text-[14px] uppercase tracking-wider mt-2">Director – Media & Communications</p>
             </div>
             {/* Founder 3 */}
